@@ -1,6 +1,6 @@
 /* ============================================
    NOIR CLOTHING — PREMIUM E-COMMERCE STYLESHEET
-   Theme: Dark + Warm Gold Accent | Font: Poppins
+   Theme: Dark Teal & Navy | Font: Poppins
    ============================================ */
 
 /* ----- Import Google Font ----- */
@@ -8,22 +8,22 @@
 
 /* ----- CSS Variables (Design Tokens) ----- */
 :root {
-  --black: #0f0f0f;
-  --dark: #181818;
-  --dark-gray: #222;
-  --mid-gray: #3a3a3a;
-  --gray: #7a7a7a;
-  --light-gray: #bfbfbf;
-  --off-white: #f7f5f2;
+  --black: #061E29;
+  --dark: #0a2a38;
+  --dark-gray: #0e3347;
+  --mid-gray: #1D546D;
+  --gray: #5F9598;
+  --light-gray: #a8cbcd;
+  --off-white: #F3F4F4;
   --white: #ffffff;
-  --accent: #c9a96e;
-  --accent-light: #dfc9a0;
-  --accent-dark: #a8893f;
-  --warm-bg: #faf8f5;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
-  --shadow-hover: 0 12px 50px rgba(0, 0, 0, 0.18);
+  --accent: #1D546D;
+  --accent-light: #5F9598;
+  --accent-dark: #0e3347;
+  --warm-bg: #eef3f4;
+  --shadow-sm: 0 2px 8px rgba(6, 30, 41, 0.08);
+  --shadow-md: 0 4px 20px rgba(6, 30, 41, 0.10);
+  --shadow-lg: 0 8px 40px rgba(6, 30, 41, 0.14);
+  --shadow-hover: 0 12px 50px rgba(6, 30, 41, 0.20);
   --radius: 12px;
   --radius-sm: 8px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,7 +66,7 @@ img {
    PROMO BAR (Top of page)
    ============================================ */
 .promo-bar {
-  background: linear-gradient(90deg, var(--black) 0%, #1c1915 50%, var(--black) 100%);
+  background: linear-gradient(90deg, var(--black) 0%, #0a2a38 50%, var(--black) 100%);
   color: var(--light-gray);
   text-align: center;
   padding: 10px 20px;
@@ -172,7 +172,7 @@ nav {
   top: -10px;
   right: -14px;
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   font-size: 0.6rem;
   font-weight: 700;
   width: 20px;
@@ -192,7 +192,7 @@ nav {
    HERO SECTION (Home Page)
    ============================================ */
 .hero {
-  background: linear-gradient(160deg, #0f0e0c 0%, #1a1713 40%, #2a2520 100%);
+  background: linear-gradient(160deg, #0a0a0a 0%, #141414 40%, #1a1a1a 100%);
   color: var(--white);
   text-align: center;
   padding: 140px 20px 120px;
@@ -272,8 +272,8 @@ nav {
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent-dark);
+  color: var(----off-white);
+  border: 1px solid var(--off-white);
   padding: 8px 24px;
   border-radius: 50px;
   margin-bottom: 30px;
@@ -353,14 +353,14 @@ nav {
 
 .btn-primary {
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   border-color: var(--accent);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-light);
-  color: var(--black);
-  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+  color: var(--white);
+  box-shadow: 0 8px 30px rgba(29, 84, 109, 0.3);
 }
 
 .btn-dark {
@@ -537,7 +537,7 @@ nav {
    ============================================ */
 .marquee-section {
   overflow: hidden;
-  background: linear-gradient(90deg, #12100d 0%, #1e1a14 50%, #12100d 100%);
+  background: linear-gradient(90deg, #061E29 0%, #0a2a38 50%, #061E29 100%);
   padding: 30px 0;
   position: relative;
 }
@@ -632,7 +632,7 @@ nav {
 
 .search-bar input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+  box-shadow: 0 0 0 3px rgba(29, 84, 109, 0.2);
 }
 
 .search-bar input::placeholder {
@@ -682,7 +682,7 @@ nav {
 .filter-tag:hover,
 .filter-tag.active {
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   border-color: var(--accent);
 }
 
@@ -735,7 +735,7 @@ nav {
   top: 16px;
   left: 16px;
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -818,7 +818,7 @@ nav {
    PROMO BANNER (Mid-page CTA)
    ============================================ */
 .promo-banner {
-  background: linear-gradient(160deg, #12100d 0%, #2a2419 100%);
+  background: linear-gradient(160deg, #061E29 0%, #0e3347 100%);
   color: var(--white);
   padding: 100px 50px;
   text-align: center;
@@ -912,7 +912,7 @@ nav {
 .newsletter-form button {
   padding: 15px 36px;
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   border: none;
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
@@ -1103,7 +1103,7 @@ nav {
   letter-spacing: 3px;
   border: none;
   background-color: var(--accent);
-  color: var(--black);
+  color: var(--white);
   cursor: pointer;
   border-radius: 50px;
   transition: all var(--transition);
@@ -1428,7 +1428,7 @@ nav {
    FOOTER
    ============================================ */
 footer {
-  background: linear-gradient(180deg, #12100d 0%, #0f0e0c 100%);
+  background: linear-gradient(180deg, #061E29 0%, #041921 100%);
   color: var(--gray);
   padding: 60px 50px 30px;
 }
