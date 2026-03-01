@@ -1235,6 +1235,16 @@ nav {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Colored background when viewing clothing only */
+.modal-image.clothing-view {
+  background: linear-gradient(145deg, #5F9598 0%, #1D546D 50%, #061E29 100%);
+}
+
+.modal-image.clothing-view img {
+  padding: 30px;
+  object-fit: contain !important;
+}
+
 .modal-image .product-badge {
   top: 20px;
   left: 20px;

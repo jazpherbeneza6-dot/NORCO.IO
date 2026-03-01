@@ -233,7 +233,8 @@ function toggleModalImage(productId) {
 
   const img = document.getElementById('modal-product-img');
   const btn = document.getElementById('modal-view-btn');
-  if (!img || !btn) return;
+  const imageContainer = img ? img.closest('.modal-image') : null;
+  if (!img || !btn || !imageContainer) return;
 
   showingClothingOnly = !showingClothingOnly;
 
@@ -242,10 +243,14 @@ function toggleModalImage(productId) {
   setTimeout(() => {
     if (showingClothingOnly) {
       img.src = product.clothingImage;
+      img.style.objectFit = 'contain';
+      imageContainer.classList.add('clothing-view');
       btn.innerHTML = '<span class="material-icons-outlined">person</span>';
       btn.title = 'View with model';
     } else {
       img.src = product.image;
+      img.style.objectFit = 'cover';
+      imageContainer.classList.remove('clothing-view');
       btn.innerHTML = '<span class="material-icons-outlined">checkroom</span>';
       btn.title = 'View clothing only';
     }
