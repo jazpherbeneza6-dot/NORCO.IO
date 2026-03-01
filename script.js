@@ -668,3 +668,38 @@ function initScrollReveal() {
 
   revealElements.forEach(el => observer.observe(el));
 }
+
+// ===== 14. MOBILE HAMBURGER MENU =====
+// Toggles the mobile navigation slide-in menu.
+function toggleMobileMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  }
+}
+
+// Close mobile menu when a nav link is clicked
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.nav-links a')) {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    if (hamburger && navLinks) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  }
+});
+
+// Close mobile menu on window resize past mobile breakpoint
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    if (hamburger && navLinks) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  }
+});
