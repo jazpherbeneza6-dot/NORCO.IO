@@ -14,6 +14,7 @@ const PRODUCTS = {
     name: 'Classic Black Tee',
     price: 29.99,
     image: 'images/product1.png',
+    clothingImage: 'images/product1_flat.png',
     category: 'Tops',
     badge: 'New',
     description: 'A wardrobe essential crafted from 100% premium cotton. This classic crew-neck tee features a relaxed fit with a clean silhouette that pairs effortlessly with any look.',
@@ -25,6 +26,7 @@ const PRODUCTS = {
     name: 'Oversized Hoodie',
     price: 59.99,
     image: 'images/product2.png',
+    clothingImage: 'images/product2_flat.png',
     category: 'Tops',
     badge: 'Popular',
     description: 'Stay cozy in this oversized hoodie made from a soft cotton-polyester blend. Features a spacious kangaroo pocket and an adjustable drawstring hood for the perfect casual look.',
@@ -36,6 +38,7 @@ const PRODUCTS = {
     name: 'Slim Fit Jeans',
     price: 49.99,
     image: 'images/product3.png',
+    clothingImage: 'images/product3_flat.png',
     category: 'Bottoms',
     badge: '',
     description: 'These slim-fit jeans combine comfort with a modern tailored look. Made with stretch denim for freedom of movement, they feature a classic 5-pocket design and a tapered leg.',
@@ -47,6 +50,7 @@ const PRODUCTS = {
     name: 'Gray Bomber Jacket',
     price: 79.99,
     image: 'images/product4.png',
+    clothingImage: 'images/product4_flat.png',
     category: 'Outerwear',
     badge: 'Best Seller',
     description: 'A modern take on the classic bomber silhouette. This lightweight jacket features ribbed cuffs, a clean zip front, and sleek side pockets — perfect for layering in any season.',
@@ -58,6 +62,7 @@ const PRODUCTS = {
     name: 'Black Joggers',
     price: 44.99,
     image: 'images/product5.png',
+    clothingImage: 'images/product5_flat.png',
     category: 'Bottoms',
     badge: '',
     description: 'Versatile joggers that transition seamlessly from the gym to the street. Crafted with a soft fleece lining and featuring an elastic waistband with drawstring for a custom fit.',
@@ -69,6 +74,7 @@ const PRODUCTS = {
     name: 'White Cap',
     price: 24.99,
     image: 'images/product6.png',
+    clothingImage: 'images/product6_flat.png',
     category: 'Accessories',
     badge: '',
     description: 'A clean, minimalist baseball cap that completes any casual outfit. Features a structured crown, curved brim, and an adjustable strap for a perfect fit every time.',
@@ -80,6 +86,7 @@ const PRODUCTS = {
     name: 'Essential White Tee',
     price: 29.99,
     image: 'images/product7.png',
+    clothingImage: 'images/product7_flat.png',
     category: 'Tops',
     badge: 'New',
     description: 'The perfect white tee — clean, crisp, and made from premium combed cotton. A slightly heavier weight ensures opacity and durability, wash after wash.',
@@ -91,6 +98,7 @@ const PRODUCTS = {
     name: 'Black Zip Hoodie',
     price: 64.99,
     image: 'images/product8.png',
+    clothingImage: 'images/product8_flat.png',
     category: 'Tops',
     badge: '',
     description: 'A versatile zip-up hoodie in classic black. Features a full metal zipper, split kangaroo pockets, and a soft brushed fleece interior for all-day comfort.',
@@ -102,6 +110,7 @@ const PRODUCTS = {
     name: 'Gray Crewneck',
     price: 54.99,
     image: 'images/product9.png',
+    clothingImage: 'images/product9_flat.png',
     category: 'Tops',
     badge: 'Trending',
     description: 'An elevated crewneck sweatshirt in heather gray. Made from a premium cotton blend with a soft interior, it offers a clean and polished casual look.',
@@ -113,6 +122,7 @@ const PRODUCTS = {
     name: 'Black Shorts',
     price: 34.99,
     image: 'images/product10.png',
+    clothingImage: 'images/product10_flat.png',
     category: 'Bottoms',
     badge: '',
     description: 'Lightweight athletic shorts designed for both performance and style. Feature a 7-inch inseam, moisture-wicking fabric, and a comfortable elastic waistband.',
@@ -124,6 +134,7 @@ const PRODUCTS = {
     name: 'Black Beanie',
     price: 19.99,
     image: 'images/product11.png',
+    clothingImage: 'images/product11_flat.png',
     category: 'Accessories',
     badge: '',
     description: 'A classic knit beanie in pure black. Made from a soft acrylic blend, it offers warmth without bulk and features a fold-over cuff for a timeless look.',
@@ -143,6 +154,7 @@ function openProductModal(id) {
 
   selectedSize = null;
   modalQuantity = 1;
+  showingClothingOnly = false;
 
   // Remove existing modal if any
   const existingModal = document.getElementById('product-modal');
@@ -164,6 +176,9 @@ function openProductModal(id) {
           <div class="modal-image">
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
             <img src="${product.image}" alt="${product.name}" id="modal-product-img">
+            <button class="modal-view-toggle" id="modal-view-btn" onclick="toggleModalImage(${product.id})" title="View clothing only">
+              <span class="material-icons-outlined">checkroom</span>
+            </button>
           </div>
           <div class="modal-details">
             <span class="modal-category">${product.category}</span>
@@ -206,6 +221,36 @@ function openProductModal(id) {
   requestAnimationFrame(() => {
     document.getElementById('product-modal').classList.add('active');
   });
+}
+
+// ===== IMAGE VIEW TOGGLE =====
+// Switches between model photo and clothing-only photo in the modal.
+let showingClothingOnly = false;
+
+function toggleModalImage(productId) {
+  const product = PRODUCTS[productId];
+  if (!product) return;
+
+  const img = document.getElementById('modal-product-img');
+  const btn = document.getElementById('modal-view-btn');
+  if (!img || !btn) return;
+
+  showingClothingOnly = !showingClothingOnly;
+
+  // Smooth transition
+  img.style.opacity = '0';
+  setTimeout(() => {
+    if (showingClothingOnly) {
+      img.src = product.clothingImage;
+      btn.innerHTML = '<span class="material-icons-outlined">person</span>';
+      btn.title = 'View with model';
+    } else {
+      img.src = product.image;
+      btn.innerHTML = '<span class="material-icons-outlined">checkroom</span>';
+      btn.title = 'View clothing only';
+    }
+    img.style.opacity = '1';
+  }, 200);
 }
 
 function closeModal(event) {
