@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Shop — NOIR Clothing</title>
+    <meta name="description"
+        content="Browse the full NOIR clothing collection. Shop essentials like tees, hoodies, jeans, jackets, joggers, and caps.">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+       PROMO BAR
+       ============================== -->
+    <div class="promo-bar">
+        <strong>Free Shipping</strong> on all orders over $75 &nbsp;|&nbsp; Use code <strong>NOIR25</strong> for 25% off
+    </div>
+
+    <!-- ==============================
+       HEADER / NAVIGATION BAR
+       ============================== -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NOIR<span>.co</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        🛒 Cart
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==============================
+       SHOP SECTION — All 11 Products
+       ============================== -->
+    <section class="shop-section reveal">
+        <div class="section-header">
+            <span class="section-label">Collection</span>
+            <h1 class="section-title">All Products</h1>
+            <p class="section-subtitle">Browse our curated selection of essentials</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <span class="material-icons-outlined search-icon">search</span>
+            <input type="text" id="search-input" placeholder="Search products..." oninput="searchProducts(this.value)">
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-tags">
+                <button class="filter-tag active" onclick="filterProducts('all', this)">All</button>
+                <button class="filter-tag" onclick="filterProducts('tops', this)">Tops</button>
+                <button class="filter-tag" onclick="filterProducts('bottoms', this)">Bottoms</button>
+                <button class="filter-tag" onclick="filterProducts('outerwear', this)">Outerwear</button>
+                <button class="filter-tag" onclick="filterProducts('accessories', this)">Accessories</button>
+            </div>
+            <span class="product-count"><span id="visible-count">11</span> products</span>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+
+            <!-- PRODUCT 1: Classic Black Tee -->
+            <div class="product-card" id="product-1" data-category="tops">
+                <div class="product-card-image">
+                    <span class="product-badge">New</span>
+                    <img src="images/product1.png" alt="Classic Black Tee">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(1, 'Classic Black Tee', 29.99, 'images/product1.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Classic Black Tee</h3>
+                    <div class="product-meta">
+                        <span class="price">$29.99</span>
+                        <span class="category-label">Tops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2: Oversized Hoodie -->
+            <div class="product-card" id="product-2" data-category="tops">
+                <div class="product-card-image">
+                    <span class="product-badge">Popular</span>
+                    <img src="images/product2.png" alt="Oversized Hoodie">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(2, 'Oversized Hoodie', 59.99, 'images/product2.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Oversized Hoodie</h3>
+                    <div class="product-meta">
+                        <span class="price">$59.99</span>
+                        <span class="category-label">Tops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3: Slim Fit Jeans -->
+            <div class="product-card" id="product-3" data-category="bottoms">
+                <div class="product-card-image">
+                    <img src="images/product3.png" alt="Slim Fit Jeans">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(3, 'Slim Fit Jeans', 49.99, 'images/product3.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Slim Fit Jeans</h3>
+                    <div class="product-meta">
+                        <span class="price">$49.99</span>
+                        <span class="category-label">Bottoms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 4: Gray Bomber Jacket -->
+            <div class="product-card" id="product-4" data-category="outerwear">
+                <div class="product-card-image">
+                    <span class="product-badge">Best Seller</span>
+                    <img src="images/product4.png" alt="Gray Bomber Jacket">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(4, 'Gray Bomber Jacket', 79.99, 'images/product4.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Gray Bomber Jacket</h3>
+                    <div class="product-meta">
+                        <span class="price">$79.99</span>
+                        <span class="category-label">Outerwear</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 5: Black Joggers -->
+            <div class="product-card" id="product-5" data-category="bottoms">
+                <div class="product-card-image">
+                    <img src="images/product5.png" alt="Black Joggers">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(5, 'Black Joggers', 44.99, 'images/product5.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Black Joggers</h3>
+                    <div class="product-meta">
+                        <span class="price">$44.99</span>
+                        <span class="category-label">Bottoms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6: White Cap -->
+            <div class="product-card" id="product-6" data-category="accessories">
+                <div class="product-card-image">
+                    <img src="images/product6.png" alt="White Cap">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(6, 'White Cap', 24.99, 'images/product6.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>White Cap</h3>
+                    <div class="product-meta">
+                        <span class="price">$24.99</span>
+                        <span class="category-label">Accessories</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 7: Essential White Tee -->
+            <div class="product-card" id="product-7" data-category="tops">
+                <div class="product-card-image">
+                    <span class="product-badge">New</span>
+                    <img src="images/product7.png" alt="Essential White Tee">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(7, 'Essential White Tee', 29.99, 'images/product7.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Essential White Tee</h3>
+                    <div class="product-meta">
+                        <span class="price">$29.99</span>
+                        <span class="category-label">Tops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 8: Black Zip Hoodie -->
+            <div class="product-card" id="product-8" data-category="tops">
+                <div class="product-card-image">
+                    <img src="images/product8.png" alt="Black Zip Hoodie">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(8, 'Black Zip Hoodie', 64.99, 'images/product8.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Black Zip Hoodie</h3>
+                    <div class="product-meta">
+                        <span class="price">$64.99</span>
+                        <span class="category-label">Tops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 9: Gray Crewneck -->
+            <div class="product-card" id="product-9" data-category="tops">
+                <div class="product-card-image">
+                    <span class="product-badge">Trending</span>
+                    <img src="images/product9.png" alt="Gray Crewneck">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(9, 'Gray Crewneck', 54.99, 'images/product9.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Gray Crewneck</h3>
+                    <div class="product-meta">
+                        <span class="price">$54.99</span>
+                        <span class="category-label">Tops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 10: Black Shorts -->
+            <div class="product-card" id="product-10" data-category="bottoms">
+                <div class="product-card-image">
+                    <img src="images/product10.png" alt="Black Shorts">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(10, 'Black Shorts', 34.99, 'images/product10.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Black Shorts</h3>
+                    <div class="product-meta">
+                        <span class="price">$34.99</span>
+                        <span class="category-label">Bottoms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 11: Black Beanie -->
+            <div class="product-card" id="product-11" data-category="accessories">
+                <div class="product-card-image">
+                    <img src="images/product11.png" alt="Black Beanie">
+                    <div class="quick-add">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart(11, 'Black Beanie', 19.99, 'images/product11.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Black Beanie</h3>
+                    <div class="product-meta">
+                        <span class="price">$19.99</span>
+                        <span class="category-label">Accessories</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==============================
+       NEWSLETTER
+       ============================== -->
+    <section class="newsletter reveal">
+        <div class="newsletter-inner">
+            <h2>Stay in the Loop</h2>
+            <p>Subscribe for early access to new drops, exclusive offers, and style tips.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thanks for subscribing!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==============================
+       FOOTER
+       ============================== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">NOIR<span>.co</span></a>
+                <p>Modern essentials for the minimalist wardrobe. Quality pieces that stand the test of time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="shop.html">Tops</a></li>
+                    <li><a href="shop.html">Bottoms</a></li>
+                    <li><a href="shop.html">Outerwear</a></li>
+                    <li><a href="shop.html">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NOIR.co — All Rights Reserved</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>

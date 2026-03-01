@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Cart — NOIR Clothing</title>
+    <meta name="description" content="Review your NOIR shopping cart. Adjust quantities and proceed to checkout.">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+       PROMO BAR
+       ============================== -->
+    <div class="promo-bar">
+        <strong>Free Shipping</strong> on all orders over $75 &nbsp;|&nbsp; Use code <strong>NOIR25</strong> for 25% off
+    </div>
+
+    <!-- ==============================
+       HEADER / NAVIGATION BAR
+       ============================== -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NOIR<span>.co</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        🛒 Cart
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==============================
+       CART SECTION
+       Dynamically filled by JavaScript
+       ============================== -->
+    <section class="cart-section">
+        <div class="section-header" id="cart-header">
+            <span class="section-label">Review</span>
+            <h1 class="section-title">Shopping Cart</h1>
+        </div>
+
+        <!--
+      This container is dynamically rendered by renderCart() in script.js.
+      It shows cart items or an "empty cart" message.
+    -->
+        <div id="cart-container">
+            <!-- Cart items will be rendered here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- ==============================
+       FOOTER
+       ============================== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">NOIR<span>.co</span></a>
+                <p>Modern essentials for the minimalist wardrobe. Quality pieces that stand the test of time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="shop.html">Tops</a></li>
+                    <li><a href="shop.html">Bottoms</a></li>
+                    <li><a href="shop.html">Outerwear</a></li>
+                    <li><a href="shop.html">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NOIR.co — All Rights Reserved</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
