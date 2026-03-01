@@ -1820,7 +1820,13 @@ footer {
   .quick-add {
     transform: translateY(0);
     position: relative;
-    padding: 0 16px 14px;
+    padding: 0 12px 10px;
+  }
+
+  .quick-add .add-to-cart-btn {
+    padding: 10px 16px;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
   }
 
   /* --- Promo Banner --- */
@@ -1863,26 +1869,53 @@ footer {
     align-items: flex-end;
   }
 
+  .modal-container {
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .modal-body {
     grid-template-columns: 1fr;
   }
 
   .modal-image {
     border-radius: 16px 16px 0 0;
-    max-height: 320px;
+    max-height: 280px;
+    min-height: 250px;
+  }
+
+  .modal-image img {
+    min-height: 250px;
+    max-height: 280px;
   }
 
   .modal-details {
-    padding: 20px 20px 30px;
-  }
-
-  .modal-container {
-    border-radius: 16px 16px 0 0;
-    max-height: 95vh;
+    padding: 20px 20px 40px;
+    overflow-y: visible;
   }
 
   .modal-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .modal-description {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .modal-add-btn {
+    padding: 14px 20px;
+    font-size: 0.78rem;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
   }
 
   .modal-view-toggle {
